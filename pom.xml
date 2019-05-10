@@ -1,63 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.example</groupId>
-	<artifactId>SimpleDubbo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>SimpleDubbo</name>
-	<description>SimpleDubbo project for Spring Boot</description>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>SimpleDubbo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>SimpleDubbo</name>
+    <description>SimpleDubbo project for Spring Boot</description>
 
-	<modules>
-          <module>SimpleDubbo-rpc</module>
-          <module>SimpleDubbo-common</module>
-          <module>SimpleDubbo-extension</module>
-          <module>SimpleDubbo-registry</module>
-          <module>SimpleDubbo-serialization</module>
-          <module>SimpleDubbo-transport</module>
-        </modules>
-	<properties>
-	  <java.version>1.8</java.version>
-	  <project.groupId>com.example</project.groupId>
-	   <project.version>0.0.1-SNAPSHOT</project.version>
-	</properties>
+    <modules>
+        <module>SimpleDubbo-rpc</module>
+        <module>SimpleDubbo-common</module>
+        <module>SimpleDubbo-example</module>
+        <module>SimpleDubbo-registry</module>
+        <module>SimpleDubbo-serialization</module>
+        <module>SimpleDubbo-transport</module>
+    </modules>
+    <properties>
+        <java.version>1.8</java.version>
+        <project.groupId>com.example</project.groupId>
+        <project.version>0.0.1-SNAPSHOT</project.version>
+    </properties>
 
-	<dependencies>
-	   <dependency>
-             <groupId>${project.groupId}</groupId>
-             <artifactId>SimpleDubbo-rpc</artifactId>
-             <version>${project.version}</version>
-           </dependency>
-	   <dependency>
-             <groupId>${project.groupId}</groupId>
-             <artifactId>SimpleDubbo-common</artifactId>
-             <version>${project.version}</version>
-	   <dependency>
-             <groupId>${project.groupId}</groupId>
-             <artifactId>SimpleDubbo-extension</artifactId>
-             <version>${project.version}</version>
-	   <dependency>
-             <groupId>${project.groupId}</groupId>
-             <artifactId>SimpleDubbo-registry</artifactId>
-             <version>${project.version}</version>
-	   <dependency>
-             <groupId>${project.groupId}</groupId>
-             <artifactId>SimpleDubbo-serialization</artifactId>
-             <version>${project.version}</version>
-	   <dependency>
-             <groupId>${project.groupId}</groupId>
-             <artifactId>SimpleDubbo-transport</artifactId>
-             <version>${project.version}</version>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>SimpleDubbo-rpc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>SimpleDubbo-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>SimpleDubbo-example</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>SimpleDubbo-registry</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>SimpleDubbo-serialization</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>SimpleDubbo-transport</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
