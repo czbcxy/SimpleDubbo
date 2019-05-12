@@ -1,0 +1,3 @@
+协议层: 在服务启动参数中配置、为netty的各种handler
+    继承netty的LengthFieldBasedFrameDecoder实现自定义协议。具体
+    TODO
