@@ -13,6 +13,8 @@ public class ServiceProviderFactory extends ServiceFactory {
     public ServiceProviderFactory(int tcpPort) {
         //1.监控组件初始化
         //2.启动服务
+        new NettyTcpServer(tcpPort,this).start();
+
     }
 
     /**
