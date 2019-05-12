@@ -1,0 +1,3 @@
+序列化层：
+    Hessian序列化器 HessianSerializer
+    Java序列化器    JavaSerializer
