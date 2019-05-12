@@ -30,6 +30,7 @@ public class SimpleDubboProviderBean implements InitializingBean {
      * 服务实例对象、例如HelloWorldServiceImpl
      */
     private Object serviceInstance;
+
     @Override
     public void afterPropertiesSet() throws Exception {
         init();
