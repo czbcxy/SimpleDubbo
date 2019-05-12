@@ -23,6 +23,18 @@
         <project.version>0.0.1-SNAPSHOT</project.version>
     </properties>
 
+    <!--TODO 依赖暂时使用dependencyManagement进行管理-->
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>2.5.6.SEC03</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
