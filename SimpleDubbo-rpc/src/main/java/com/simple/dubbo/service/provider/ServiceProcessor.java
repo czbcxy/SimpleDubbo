@@ -1,4 +1,7 @@
-package com.simple.dubbo.service;
+package com.simple.dubbo.service.provider;
+
+import com.simple.dubbo.api.Request;
+import com.simple.dubbo.api.Response;
 
 /**
  * 服务处理器：维护了业务服务的服务实例。所有的服务请求都最终交由这里处理。

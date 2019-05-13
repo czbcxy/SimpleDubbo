@@ -1,4 +1,4 @@
-package com.simple.dubbo.service;
+package com.simple.dubbo;
 
 /**
  * 负责管理服务的发布和订阅流程。所有与ConfigCenter交互的功能都由该组件进行处理。
