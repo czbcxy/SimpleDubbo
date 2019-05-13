@@ -1,4 +1,4 @@
-package com.simple.dubbo.service;
+package com.simple.dubbo;
 
 /**
  *

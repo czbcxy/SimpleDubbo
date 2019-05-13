@@ -1,4 +1,7 @@
-package com.simple.dubbo.service;
+package com.simple.dubbo.service.provider;
+
+import com.simple.dubbo.ServiceFactory;
+import com.simple.dubbo.ServiceMetadata;
 
 /**
  * 服务提供端负责初始化和管理所有的服务元数据、服务实例的工厂
@@ -20,7 +23,7 @@ public class ServiceProviderFactory extends ServiceFactory {
      * @param serviceMetadata
      * @param serviceInstance
      */
-    public void registerService(ServiceMetadata serviceMetadata,Object serviceInstance){
+    public void registerService(ServiceMetadata serviceMetadata, Object serviceInstance){
         //1. 注册服务线程池。 (每一个服务url都有各自对应的线程池、这样单个服务qps暴增、不会引起整个集群不可用  TODO 有待商埠)
         //2. 登记服务 (保存服务--->服务处理器的映射  参考Processor)
         //3. 发布服务

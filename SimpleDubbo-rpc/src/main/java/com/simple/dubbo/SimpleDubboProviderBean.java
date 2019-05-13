@@ -1,4 +1,4 @@
-package com.simple.dubbo.service;
+package com.simple.dubbo;
 
 import org.springframework.beans.factory.InitializingBean;
 
