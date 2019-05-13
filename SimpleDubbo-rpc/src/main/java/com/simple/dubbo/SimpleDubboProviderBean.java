@@ -39,6 +39,7 @@ public class SimpleDubboProviderBean implements InitializingBean {
     public void init(){
         //1.服务元信息 ServiceMetadata中协议的设置
         //2.调用服务工程类ServiceProviderFactory通过netty启动服务
+        new ServiceProviderFactory(8080);
         //3.调用serviceProviderFactory的registerService注册服务
     }
 

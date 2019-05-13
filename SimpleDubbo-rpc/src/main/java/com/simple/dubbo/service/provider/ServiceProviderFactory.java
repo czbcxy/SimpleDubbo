@@ -2,6 +2,7 @@ package com.simple.dubbo.service.provider;
 
 import com.simple.dubbo.ServiceFactory;
 import com.simple.dubbo.ServiceMetadata;
+import com.simple.dubbo.service.NettyTcpServer;
 
 /**
  * 服务提供端负责初始化和管理所有的服务元数据、服务实例的工厂
@@ -16,6 +17,8 @@ public class ServiceProviderFactory extends ServiceFactory {
     public ServiceProviderFactory(int tcpPort) {
         //1.监控组件初始化
         //2.启动服务
+        new NettyTcpServer(tcpPort,this).start();
+
     }
 
     /**
