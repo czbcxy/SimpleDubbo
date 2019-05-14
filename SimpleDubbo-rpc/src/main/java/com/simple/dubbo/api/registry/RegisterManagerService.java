@@ -1,4 +1,6 @@
-package com.simple.dubbo;
+package com.simple.dubbo.api.registry;
+
+import com.simple.dubbo.service.ServiceMetadata;
 
 /**
  * 负责管理服务的发布和订阅流程。所有与ConfigCenter交互的功能都由该组件进行处理。
