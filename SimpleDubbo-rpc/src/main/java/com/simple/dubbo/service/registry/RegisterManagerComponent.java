@@ -1,4 +1,7 @@
-package com.simple.dubbo;
+package com.simple.dubbo.service.registry;
+
+import com.simple.dubbo.api.registry.RegisterManagerService;
+import com.simple.dubbo.service.ServiceMetadata;
 
 /**
  * @author chengzhengzheng

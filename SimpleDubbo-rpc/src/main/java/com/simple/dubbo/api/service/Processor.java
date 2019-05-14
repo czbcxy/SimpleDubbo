@@ -1,4 +1,4 @@
-package com.simple.dubbo;
+package com.simple.dubbo.api.service;
 
 import com.simple.dubbo.api.Request;
 import com.simple.dubbo.api.Response;

@@ -1,6 +1,6 @@
 package com.simple.dubbo.service.provider;
 
-import com.simple.dubbo.Processor;
+import com.simple.dubbo.api.service.Processor;
 import com.simple.dubbo.api.Request;
 import com.simple.dubbo.api.Response;
 

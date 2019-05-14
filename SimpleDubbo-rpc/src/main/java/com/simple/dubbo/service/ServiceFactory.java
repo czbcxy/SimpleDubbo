@@ -1,4 +1,6 @@
-package com.simple.dubbo;
+package com.simple.dubbo.service;
+
+import com.simple.dubbo.RunMode;
 
 /**
  *
