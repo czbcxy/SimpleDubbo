@@ -26,6 +26,7 @@
         <log4j_version>1.2.16</log4j_version>
         <logback_version>1.2.2</logback_version>
         <log4j2_version>2.11.1</log4j2_version>
+        <guava_version>23.0</guava_version>
     </properties>
 
     <dependencyManagement>
@@ -46,6 +47,12 @@
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
                 <version>4.1.36.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava_version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -81,7 +88,6 @@
             <artifactId>SimpleDubbo-transport</artifactId>
             <version>${project.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -112,6 +118,7 @@
             <artifactId>log4j-core</artifactId>
             <version>${log4j2_version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
     </dependencies>
 
     <build>
