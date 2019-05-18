@@ -8,6 +8,18 @@ import com.simple.dubbo.service.ServiceMetadata;
  * @date 2019-05-12
  **/
 public class RegisterManagerComponent implements RegisterManagerService {
+
+    private RegisterManagerComponent() {
+    }
+
+    private static class SingleHolder {
+        private static RegisterManagerService instance = new RegisterManagerComponent();
+    }
+
+    public static RegisterManagerService getInstance() {
+        return SingleHolder.instance;
+    }
+
     @Override
     public void publish(ServiceMetadata serviceMetadata) {
         //1. 获取发布服务地址

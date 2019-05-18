@@ -28,6 +28,17 @@ public class ServiceMetadata {
         return null;
     }
 
+    public Class<?> getServiceInterface() {
+        if (null == serviceInterface) {
+            try {
+                serviceInterface = Class.forName(serviceName);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        return serviceInterface;
+    }
+
     public void setServiceName(String interfaceName) {
         this.instanceName = interfaceName;
     }
