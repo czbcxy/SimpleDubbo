@@ -3,12 +3,12 @@ package com.simple.dubbo.service.provider;
 import com.simple.dubbo.ThreadNotSafeContext;
 import com.simple.dubbo.api.Constants;
 import com.simple.dubbo.api.GlobalContext;
-import com.simple.dubbo.api.registry.RegisterManagerService;
+import com.simple.dubbo.api.registry.RegisterService;
 import com.simple.dubbo.api.service.Processor;
 import com.simple.dubbo.service.NettyTcpServer;
 import com.simple.dubbo.service.ServiceFactory;
 import com.simple.dubbo.service.ServiceMetadata;
-import com.simple.dubbo.service.registry.RegisterManagerComponent;
+import com.simple.dubbo.service.registry.DefaultRegistryService;
 
 /**
  * 服务提供端负责初始化和管理所有的服务元数据、服务实例的工厂
@@ -19,7 +19,7 @@ import com.simple.dubbo.service.registry.RegisterManagerComponent;
  **/
 public class ServiceProviderFactory extends ServiceFactory {
 
-    private RegisterManagerService registerManagerService = RegisterManagerComponent.getInstance();
+    private RegisterService registerManagerService = DefaultRegistryService.getInstance();
 
     public ServiceProviderFactory(int tcpPort) {
         //1.监控组件初始化

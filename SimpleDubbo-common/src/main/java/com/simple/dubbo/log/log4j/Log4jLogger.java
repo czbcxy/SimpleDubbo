@@ -1,6 +1,7 @@
 package com.simple.dubbo.log.log4j;
 
 import com.simple.dubbo.log.AbstractLogger;
+import com.simple.dubbo.log.level.Level;
 
 /**
  * @author chengzhengzheng
@@ -94,6 +95,16 @@ public class Log4jLogger extends AbstractLogger {
 
     @Override
     public void warn(Throwable t, String format, Object... arguments) {
+
+    }
+
+    @Override
+    public void log(Level level, String format, Object... arguments) {
+        logger.info("helo");
+    }
+
+    @Override
+    public void log(Level level, Throwable t, String format, Object... arguments) {
 
     }
 }

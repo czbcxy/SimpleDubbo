@@ -1,8 +1,13 @@
 package com.simple.dubbo.spring;
 
+import com.simple.dubbo.Server;
+import com.simple.dubbo.api.registry.RegisterService;
 import com.simple.dubbo.service.ServiceMetadata;
-import com.simple.dubbo.service.provider.ServiceProviderFactory;
+import com.simple.dubbo.transport.Acceptor;
+import com.simple.dubbo.util.SystemPropertyUtil;
 import org.springframework.beans.factory.InitializingBean;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  *
@@ -23,7 +28,7 @@ import org.springframework.beans.factory.InitializingBean;
  **/
 public class SimpleDubboProviderBean implements InitializingBean {
 
-
+    private static final AtomicBoolean inited = new AtomicBoolean(false);
     /**
      * 服务元信息
      */
@@ -33,23 +38,49 @@ public class SimpleDubboProviderBean implements InitializingBean {
      */
     private Object serviceInstance;
 
+    /**
+     * 全局Server
+     */
+    private Server server;
+
+    /**
+     * 接收IO请求者
+     */
+    private Acceptor acceptor;
+
+    private RegisterService.RegistryType registryType;
+
+
     @Override
     public void afterPropertiesSet() throws Exception {
         init();
     }
 
     public void init(){
-        //1.服务元信息 ServiceMetadata中协议的设置
-        //2.调用服务工程类ServiceProviderFactory通过netty启动服务
-        ServiceProviderFactory serviceProviderFactory = new ServiceProviderFactory(8080);
-        //3.调用serviceProviderFactory的registerService注册服务
-        try {
-            serviceProviderFactory.registerService(serviceMetadata,serviceInstance);
-        }catch (Exception e){
-            //TODO
-            System.exit(1);
+        if(inited.compareAndSet(false,true)){
+            initServer();
         }
+        //注册服务
+    }
 
+    private void initServer() {
+        server = new DefaultServer(registryType);
+        if(acceptor == null){
+            acceptor = createDefaultAcceptor();
+        }
+        server.withAcceptor(acceptor);
+    }
+
+    private Acceptor createDefaultAcceptor() {
+        Acceptor defaultAcceptor = null;
+        try {
+            String acceptorName = SystemPropertyUtil.get("simple.dubbo.default.acceptor", "com.simple.dubbo.transport.netty.NettyTcpAcceptor");
+            Class<?> className = Class.forName(acceptorName);
+            defaultAcceptor = (Acceptor) className.newInstance();
+        }catch (Exception e){
+
+        }
+        return defaultAcceptor;
     }
 
     /**
