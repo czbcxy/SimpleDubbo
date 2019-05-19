@@ -1,22 +1,24 @@
 package com.simple.dubbo.service.registry;
 
-import com.simple.dubbo.api.registry.RegisterManagerService;
+import com.simple.dubbo.util.SpiMetadata;
+import com.simple.dubbo.api.registry.RegisterService;
 import com.simple.dubbo.service.ServiceMetadata;
 
 /**
  * @author chengzhengzheng
  * @date 2019-05-12
  **/
-public class RegisterManagerComponent implements RegisterManagerService {
+@SpiMetadata(name = "default")
+public class DefaultRegistryService implements RegisterService {
 
-    private RegisterManagerComponent() {
+    private DefaultRegistryService() {
     }
 
     private static class SingleHolder {
-        private static RegisterManagerService instance = new RegisterManagerComponent();
+        private static RegisterService instance = new DefaultRegistryService();
     }
 
-    public static RegisterManagerService getInstance() {
+    public static RegisterService getInstance() {
         return SingleHolder.instance;
     }
 
