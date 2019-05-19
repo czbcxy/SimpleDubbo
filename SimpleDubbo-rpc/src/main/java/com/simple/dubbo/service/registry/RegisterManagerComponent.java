@@ -1,10 +1,25 @@
-package com.simple.dubbo.service;
+package com.simple.dubbo.service.registry;
+
+import com.simple.dubbo.api.registry.RegisterManagerService;
+import com.simple.dubbo.service.ServiceMetadata;
 
 /**
  * @author chengzhengzheng
  * @date 2019-05-12
  **/
 public class RegisterManagerComponent implements RegisterManagerService {
+
+    private RegisterManagerComponent() {
+    }
+
+    private static class SingleHolder {
+        private static RegisterManagerService instance = new RegisterManagerComponent();
+    }
+
+    public static RegisterManagerService getInstance() {
+        return SingleHolder.instance;
+    }
+
     @Override
     public void publish(ServiceMetadata serviceMetadata) {
         //1. 获取发布服务地址

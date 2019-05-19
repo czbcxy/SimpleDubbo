@@ -1,4 +1,7 @@
-package com.simple.dubbo.service;
+package com.simple.dubbo.api.service;
+
+import com.simple.dubbo.api.Request;
+import com.simple.dubbo.api.Response;
 
 /**
  * 服务处理器。

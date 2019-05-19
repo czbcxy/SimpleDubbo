@@ -1,4 +1,4 @@
-package com.simple.dubbo.service;
+package com.simple.dubbo;
 
 /**
  * 服务运行环境

@@ -1,5 +1,7 @@
 package com.simple.dubbo.service;
 
+import com.simple.dubbo.RunMode;
+
 /**
  *
  * 服务工厂抽象

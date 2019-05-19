@@ -1,5 +1,7 @@
-package com.simple.dubbo.service;
+package com.simple.dubbo.spring;
 
+import com.simple.dubbo.service.ServiceMetadata;
+import com.simple.dubbo.service.provider.ServiceProviderFactory;
 import org.springframework.beans.factory.InitializingBean;
 
 /**
@@ -39,7 +41,15 @@ public class SimpleDubboProviderBean implements InitializingBean {
     public void init(){
         //1.服务元信息 ServiceMetadata中协议的设置
         //2.调用服务工程类ServiceProviderFactory通过netty启动服务
+        ServiceProviderFactory serviceProviderFactory = new ServiceProviderFactory(8080);
         //3.调用serviceProviderFactory的registerService注册服务
+        try {
+            serviceProviderFactory.registerService(serviceMetadata,serviceInstance);
+        }catch (Exception e){
+            //TODO
+            System.exit(1);
+        }
+
     }
 
     /**
@@ -55,7 +65,7 @@ public class SimpleDubboProviderBean implements InitializingBean {
      * @param interfaceName
      */
     public void setInterface(String interfaceName){
-        //TODO
+        serviceMetadata.setServiceName(interfaceName);
     }
 
     /**
