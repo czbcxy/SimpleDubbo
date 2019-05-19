@@ -8,7 +8,7 @@ import com.simple.dubbo.service.ServiceMetadata;
  * @author chengzhengzheng
  * @date 2019-05-12
  **/
-public interface RegisterManagerService {
+public interface RegisterService {
     /**
      * 发布服务
      *
@@ -24,5 +24,23 @@ public interface RegisterManagerService {
     void subscribe(ServiceMetadata data);
 
 
-    //TODO 其他功能
+    enum RegistryType {
+        DEFAULT("default"),
+        ZOOKEEPER("zookeeper");
+
+        String value;
+
+        RegistryType(String value) {
+            this.value = value;
+        }
+
+        RegistryType enumOf(String value){
+            for(RegistryType type : values()){
+                if(type.value.equals(value)){
+                    return type;
+                }
+            }
+            return null;
+        }
+    }
 }
